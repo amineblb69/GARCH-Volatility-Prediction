@@ -22,7 +22,7 @@ def garch_vol(
     """ Equity Volalility Prediction using GARCH(1,1) Model + Volatility Analysis """
      
     
-    wrmp_start = pd.to_datetime(startd0) - pd.DateOffset(days=min_window)
+    wrmp_start = pd.to_datetime(startd0) - pd.DateOffset(months=min_window)
     dates = pd.date_range(startd0,endd, freq='B')
 
 
@@ -107,4 +107,5 @@ def garch_vol(
     return results, stock_vol
 
 garch, actual = garch_vol()
+
 
